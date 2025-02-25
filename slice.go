@@ -3,51 +3,37 @@ package main
 import "fmt"
 
 func main() {
-	names := []string{"ivan", "satria", "sari", "supri", "anwar"}
+	days := [...]string{"senin", "selasa", "rabu", "kamis", "jumat", "sabtu", "minggu"}
+	daySlice1 := days[3:]
 
-	var slice1 []string = names[1:4]
-	fmt.Println(slice1)
-
-	var slice []string = names[2:4]
-	fmt.Println(slice)
-
-	days := [...]string{
-		"senin",
-		"selasa",
-		"rabu",
-		"kamis",
-		"jumat",
-		"sabtu",
-		"minggu",
-	}
-
-	var daySlice1 = days[5:]
-	fmt.Println(daySlice1)
-
-	daySlice1[0] = "sabtu baru"
-	daySlice1[1] = "minggu baru"
-	fmt.Println(daySlice1)
+	daySlice1[0] = "kamis Baru"
 	fmt.Println(days)
 
 	daySlice2 := append(daySlice1, "hari baru")
-	daySlice2[0] = "sabtu lama"
-
-	fmt.Println(daySlice1)
 	fmt.Println(daySlice2)
+
 	fmt.Println(days)
 
-	var newSlice []string = make([]string, 3, 4)
-	newSlice[0] = "muhammad"
-	newSlice[2] = "satria"
+	slice1 := days[1:4]
+	fmt.Println(len(slice1))
 
-	fmt.Println(newSlice)
-	fmt.Println(len(newSlice))
-	fmt.Println(cap(newSlice))
+	var slice3 []string = days[4:6]
+	fmt.Println(slice3)
+	fmt.Println(cap(slice3))
 
-	newSlice2 := append(newSlice, "ivan")
-	fmt.Println(newSlice2)
+	var slice4 []string = days[:]
+	fmt.Println(slice4)
 
-	newSlice2[0] = "budi"
-	fmt.Println(newSlice2)
+	//menambahkan slice
+	data := []int{1, 2, 3}
+	sliceData1 := append(data, 4)
+	fmt.Println(sliceData1)
+
+	//menggabungkan kedua slice
+	slice1A := []string{"a", "b", "c"}
+	slice2B := []string{"d", "e", "f"}
+
+	sliceA := append(slice1A, slice2B...)
+	fmt.Println(sliceA)
 
 }
