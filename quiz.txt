@@ -1,0 +1,17 @@
+# Soal 4: Tulis program Go yang menggunakan switch untuk mencetak nama bulan berdasarkan angka (1-12):
+
+# 1 → "Januari"
+# 2 → "Februari"
+# 3 → "Maret"
+# 12 → "Desember"
+# Soal 5: Buatlah program Go dengan switch untuk memeriksa tipe data dari variabel yang diberikan. 
+# Tipe data yang perlu diperiksa adalah int, float64, dan string. Program harus mencetak tipe data yang sesuai dengan input yang diberikan.
+
+# Soal 6: Gunakan switch untuk menentukan apakah sebuah bilangan adalah bilangan genap atau ganjil. Program harus menerima input angka dan menampilkan hasilnya.
+
+# Soal 7: Buatlah program Go yang menggunakan switch dengan kondisi fallthrough untuk menghitung harga tiket berdasarkan kategori usia. Kategori usia yang tersedia adalah:
+
+# 0 - 5 tahun: Gratis
+# 6 - 17 tahun: Rp 50.000
+# 18 - 59 tahun: Rp 100.000
+# 60 tahun ke atas: Rp 70.000 
