@@ -14,6 +14,10 @@ type Mahasiswa struct {
 	IPK       float64
 }
 
+func (customer Customer) sayHello(name string) {
+	fmt.Println("hello", name, "my name is", customer.Name, "umur saya", customer.Age)
+}
+
 func main() {
 	var ivan Customer
 	ivan.Name = "Ivan"
@@ -38,4 +42,7 @@ func main() {
 		IPK:  14.4,
 	}
 	fmt.Println(satria)
+
+	joko.sayHello("ivan")
+
 }
