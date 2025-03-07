@@ -2,50 +2,28 @@ package main
 
 import "fmt"
 
-type User struct {
-	Name string
-}
-
 type Product struct {
 	Name  string
-	Stock int
+	Price float64
 }
 
-func ChangeName(u *User, newName string) {
-	u.Name = newName
+func MultiplyByTwo(mbt *int) {
+	*mbt = *mbt * 2
 }
 
-func HalveValue(p *float64) {
-	*p = *p / 2
-}
-
-func AddStock(ad *Product, newStock int) {
-	ad.Stock = ad.Stock + newStock
-}
-
-func ToggleSign(value *int) {
-	*value = -*value
+func UpdatePrice(up *Product, harga *float64) {
+	up.Price = *harga
 }
 
 func main() {
-	// u := User{Name: "Andi"}
-	// ChangeName(&u, "budi")
-	// fmt.Println(u.Name)
-
-	// x := 100.0
-	// HalveValue(&x)
+	// x := 5
+	// MultiplyByTwo(&x)
 	// fmt.Println(x)
 
-	// p := Product{Name: "Buku", Stock: 10}
-	// AddStock(&p, 5)
-	// fmt.Println(p.Stock)
+	p := Product{Name: "Laptop", Price: 10000}
+	newPrice := 12000.0
+	UpdatePrice(&p, &newPrice)
 
-	x := 7
-	ToggleSign(&x)
-	fmt.Println(x) // Output: -7
-
-	y := -3
-	ToggleSign(&y)
-	fmt.Println(y)
+	fmt.Println(p.Name, p.Price)
 
 }
