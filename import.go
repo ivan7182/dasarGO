@@ -1,11 +1,12 @@
-package main
+// package main
 
-import (
-	"DASARGO/helper"
-	"fmt"
-)
+// import (
+// 	"DASARGO/helper"
+// 	"fmt"
+// )
 
-func main() {
-	result := helper.SayHello("Ivan")
-	fmt.Println(result)
-}
+// func main() {
+// 	result := helper.SayHello("Ivan")
+// 	fmt.Println(result)
+// }
+// // 
