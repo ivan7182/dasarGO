@@ -5,19 +5,19 @@ import (
 	"fmt"
 )
 
-func Divide(a, b float64) (float64, error) {
+func Divide(a, b int) (int, error) {
 	if b == 0 {
-		return 0, errors.New("division by zero")
+		return 0, errors.New("Pembagi nol")
 	} else {
 		return a / b, nil
 	}
 }
 
 func main() {
-	result, err := Divide(100, 10)
-	if err != nil {
-		fmt.Println("error", err)
+	hasil, err := Divide(90, 0)
+	if err == nil {
+		fmt.Println("hasil", hasil)
 	} else {
-		fmt.Println("hasil", result)
+		fmt.Println("error", err.Error())
 	}
 }

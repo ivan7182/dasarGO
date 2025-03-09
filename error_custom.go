@@ -2,47 +2,49 @@ package main
 
 import "fmt"
 
-type validationError struct {
+type Validationerr struct {
 	Message string
 }
 
-type notFoundError struct {
+type NotFoundErr struct {
 	Message string
 }
 
-func (v *validationError) Error() string {
+func (v *Validationerr) Error() string {
 	return v.Message
 }
 
-func (n *notFoundError) Error() string {
+func (n *NotFoundErr) Error() string {
 	return n.Message
 }
 
 func SaveData(id string, data any) error {
 	if id == "" {
-		return &validationError{"validation err"}
+		return &Validationerr{Message: "Validator err"}
 	}
-
-	if id != "Ivan" {
-		return &notFoundError{"not found err"}
+	if id != "ivan" {
+		return &NotFoundErr{Message: "not found err"}
 	}
 
 	return nil
 }
 
 func main() {
-	err := SaveData("ivan", nil)
+
+	err := SaveData("", nil)
 	if err != nil {
-		switch finalErr := err.(type) {
-		case *validationError:
-			fmt.Println("validation err", finalErr.Error())
-		case *notFoundError:
-			fmt.Println("not found err", finalErr.Error())
+		switch FinalErr := err.(type) {
+		case *Validationerr:
+			fmt.Println("validation Err :", FinalErr.Error())
+		case *NotFoundErr:
+			fmt.Println("Not Found err :", FinalErr.Error())
 		default:
 			fmt.Println("unknown err", err.Error())
 
 		}
+
 	} else {
 		fmt.Println("sukses")
 	}
+
 }
